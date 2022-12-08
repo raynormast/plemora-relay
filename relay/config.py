@@ -45,7 +45,7 @@ class RelayConfig(DotDict):
 
 	def __setitem__(self, key, value):
 		if self._isdocker and key in ['db', 'listen', 'port']:
-			return
+			assert isinstance(key, str)
 		else:
 			assert isinstance(key, str)
 
