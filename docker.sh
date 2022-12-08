@@ -3,8 +3,9 @@
 case $1 in
 	install)
 		docker build -f Dockerfile -t activityrelay . && \
-		docker volume create activityrelay-data && \
-		docker run -it -p 8080:8080 -v activityrelay-data:/data --name activityrelay activityrelay
+		docker run -it -p 8080:8080 \ 
+		-v './data:/data' \
+		--name activityrelay activityrelay
 	;;
 
 	uninstall)
