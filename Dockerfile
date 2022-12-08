@@ -1,7 +1,7 @@
 FROM python:3-alpine
 
 # install build deps for pycryptodome and other c-based python modules
-RUN apk add alpine-sdk autoconf automake libtool gcc
+RUN apk add alpine-sdk autoconf automake libtool gcc bash
 
 # add env var to let the relay know it's in a container
 ENV DOCKER_RUNNING=true
